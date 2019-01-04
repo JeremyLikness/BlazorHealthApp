@@ -6,6 +6,8 @@
 
 >See the running app [here](https://blazorhealthapp.z5.web.core.windows.net/)
 
+Read the full blog post: [From Angular to Blazor: The Health App](https://jlik.me/ewt)
+
 1. Navigate to the parent folder you would like to put the project in.
 2. `git clone https://github.com/JeremyLikness/BlazorHealthApp.git`
 3. Open the `BlazorHealthApp.sln` in Visual Studio 2017 or later
