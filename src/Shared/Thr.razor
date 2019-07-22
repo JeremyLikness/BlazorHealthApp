@@ -1,11 +1,11 @@
-﻿@inject IModel Model
+@inject IModel Model
 
 <div title="Target Heart Rate" class="tile">
     <h1>THR (50% &mdash; 85%)</h1>
     <h2>@Model.Thr.Low  &mdash; @Model.Thr.High BPM</h2>
 </div>
 
-@functions {
+@code {
     protected override void OnAfterRender()
     {
         Model.Register(() => base.StateHasChanged());

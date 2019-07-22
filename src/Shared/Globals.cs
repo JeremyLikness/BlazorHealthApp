@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace src.Shared
+namespace BlazorHealthApp.Shared
 {
     public static class Globals
     {
@@ -10,8 +13,8 @@ namespace src.Shared
         public const int MinAge = 13;
         public const int MaxAge = 120;
         public const int MinWeightPounds = 20;
-        public const int MaxWeightPounds = 400;   
-        public static readonly int MinWeightKilograms = 
+        public const int MaxWeightPounds = 400;
+        public static readonly int MinWeightKilograms =
             (int)Math.Floor(MinWeightPounds / KilogramsPerPound);
         public static readonly int MaxWeightKilograms =
             (int)Math.Ceiling(MaxWeightPounds / KilogramsPerPound);
@@ -21,6 +24,5 @@ namespace src.Shared
             (int)Math.Floor(MinHeightInches * CentimetersPerInch);
         public static readonly int MaxHeightCentimeters =
             (int)Math.Ceiling(MaxHeightInches * CentimetersPerInch);
-
     }
 }

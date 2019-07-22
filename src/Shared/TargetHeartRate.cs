@@ -1,4 +1,4 @@
-﻿namespace src.Shared
+﻿namespace BlazorHealthApp.Shared
 {
     public class TargetHeartRate
     {

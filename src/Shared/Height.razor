@@ -1,4 +1,4 @@
-﻿@inject  IModel  Model
+@inject IModel  Model
 
 <div class="unit">
     <div class="label">Height:</div>
@@ -8,14 +8,15 @@
                step="1"
                min="@MinHeight"
                max="@MaxHeight"
-               bind="@HeightAmt"/>
+               @bind-value="@HeightAmt"
+               @bind-value:event="oninput"/>
         @MaxHeightText
-        <br/>
+        <br />
         @HeightDisplay
     </div>
 </div>
 
-@functions {
+@code {
 
     private int _height;
 
@@ -107,4 +108,4 @@
             }
         }
     }
-}   
+}

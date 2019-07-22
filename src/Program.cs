@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace src
+namespace BlazorHealthApp
 {
     public class Program
     {

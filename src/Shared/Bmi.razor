@@ -1,4 +1,4 @@
-﻿@inject IModel Model
+@inject IModel Model
 
 <div title="Body Mass Index"
      class="@BmiClass">
@@ -7,11 +7,18 @@
     <h2>@BmiTag</h2>
 </div>
 
-@functions {
+@code {
+
+    bool registered = false;
 
     protected override void OnAfterRender()
     {
-        Model.Register(() => base.StateHasChanged());
+        if (registered == false)
+        {
+            Model.Register(() => base.StateHasChanged());
+            registered = true;
+        }
+
         base.OnAfterRender();
     }
 

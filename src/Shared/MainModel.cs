@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace src.Shared
+namespace BlazorHealthApp.Shared
 {
     public class MainModel : IModel
     {
-        private List<Action> registrations = new List<Action>();
-        
+        private readonly List<Action> registrations = new List<Action>();
+
         private void Changed()
         {
             registrations.ForEach(a => a());

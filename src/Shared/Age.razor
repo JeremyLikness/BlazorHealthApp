@@ -1,15 +1,16 @@
-﻿@inject IModel  Model
+@inject IModel  Model
 
 <div class="unit">
     <div class="label">Age (@Globals.MinAge - @Globals.MaxAge):</div>
     <div class="labelTarget">
         <input type="number"
                class="@InputClass"
-               bind="@AgeAmt" /> years
+               @bind-value="@AgeAmt"
+               @bind-value:event="oninput"/> years
     </div>
 </div>
 
-@functions {
+@code {
 
     protected override void OnAfterRender()
     {

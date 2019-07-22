@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29111.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorHealthApp", "BlazorHealthApp.csproj", "{3A3F45BB-24CD-4FBE-9889-D59A33730529}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorHealthApp", "BlazorHealthApp.csproj", "{5E48252D-3D1D-481A-A993-CCA9828B5C04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3A3F45BB-24CD-4FBE-9889-D59A33730529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A3F45BB-24CD-4FBE-9889-D59A33730529}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A3F45BB-24CD-4FBE-9889-D59A33730529}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A3F45BB-24CD-4FBE-9889-D59A33730529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E48252D-3D1D-481A-A993-CCA9828B5C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E48252D-3D1D-481A-A993-CCA9828B5C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E48252D-3D1D-481A-A993-CCA9828B5C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E48252D-3D1D-481A-A993-CCA9828B5C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EEFCBCDA-914C-4B31-A6FD-FCB1182303E1}
+		SolutionGuid = {2F43A750-B7CE-4AD1-9056-39F7B655FF27}
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace src.Shared
+namespace BlazorHealthApp.Shared
 {
     public interface IModel
     {
