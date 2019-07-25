@@ -1,6 +1,6 @@
 # Blazor Health App
 
-[Angular 2 Health App](https://github.com/JeremyLikness/Angular2HealthApp) Ported to [Blazor](https://blazor.net) `3.0.0-preview6.19307.2` to learn how Blazor works.
+[Angular 2 Health App](https://github.com/JeremyLikness/Angular2HealthApp) Ported to [Blazor](https://blazor.net) `3.0.0-preview7.19365.7` to learn how Blazor works.
 
 ![Screenshot](./splash.png)
 
