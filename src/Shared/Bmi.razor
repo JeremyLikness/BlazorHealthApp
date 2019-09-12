@@ -1,4 +1,4 @@
-@inject IModel Model
+﻿@inject IModel Model
 
 <div title="Body Mass Index"
      class="@BmiClass">
@@ -11,7 +11,7 @@
 
     bool registered = false;
 
-    protected override void OnAfterRender()
+    protected override void OnAfterRender(bool firstRender)
     {
         if (registered == false)
         {
@@ -19,7 +19,7 @@
             registered = true;
         }
 
-        base.OnAfterRender();
+        base.OnAfterRender(firstRender);
     }
 
     string BmiClass

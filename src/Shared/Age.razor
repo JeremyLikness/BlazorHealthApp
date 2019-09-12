@@ -1,4 +1,4 @@
-@inject IModel  Model
+﻿@inject IModel  Model
 
 <div class="unit">
     <div class="label">Age (@Globals.MinAge - @Globals.MaxAge):</div>
@@ -6,24 +6,24 @@
         <input type="number"
                class="@InputClass"
                @bind-value="@AgeAmt"
-               @bind-value:event="oninput"/> years
+               @bind-value:event="oninput" /> years
     </div>
 </div>
 
 @code {
-
-    protected override void OnAfterRender()
+   
+    protected override void OnAfterRender(bool firstRender)
     {
         Model.Register(() =>
         {
             base.StateHasChanged();
         });
-        base.OnAfterRender();
+        base.OnAfterRender(firstRender);
     }
-
-    protected override void OnInit()
+    
+    protected override void OnInitialized()
     {
-        base.OnInit();
+        base.OnInitialized();
         _age = Model.AgeYears;
     }
 

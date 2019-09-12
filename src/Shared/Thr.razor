@@ -1,4 +1,4 @@
-@inject IModel Model
+﻿@inject IModel Model
 
 <div title="Target Heart Rate" class="tile">
     <h1>THR (50% &mdash; 85%)</h1>
@@ -6,9 +6,9 @@
 </div>
 
 @code {
-    protected override void OnAfterRender()
+    protected override void OnAfterRender(bool firstRender)
     {
         Model.Register(() => base.StateHasChanged());
-        base.OnAfterRender();
+        base.OnAfterRender(firstRender);
     }
 }

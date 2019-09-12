@@ -1,4 +1,4 @@
-@inject IModel  Model
+﻿@inject IModel  Model
 
 <div class="unit">
     <div class="label">Height:</div>
@@ -9,7 +9,7 @@
                min="@MinHeight"
                max="@MaxHeight"
                @bind-value="@HeightAmt"
-               @bind-value:event="oninput"/>
+               @bind-value:event="oninput" />
         @MaxHeightText
         <br />
         @HeightDisplay
@@ -20,7 +20,7 @@
 
     private int _height;
 
-    protected override void OnAfterRender()
+    protected override void OnAfterRender(bool firstRender)
     {
         Model.Register(() =>
         {
@@ -28,12 +28,12 @@
                 (int)(Model.InchesToCentimeters(Model.HeightInches));
             base.StateHasChanged();
         });
-        base.OnAfterRender();
+        base.OnAfterRender(firstRender);
     }
 
-    protected override void OnInit()
+    protected override void OnInitialized()
     {
-        base.OnInit();
+        base.OnInitialized();
         _height = (int)(Math.Round(Model.HeightInches));
     }
 

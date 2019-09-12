@@ -1,109 +1,109 @@
-@inject IModel  Model
+﻿@inject IModel  Model
 
 <div class="unit">
     <div class="label">Weight (@MinWeight - @MaxWeight):</div>
     <div class="labelTarget">
         <input type="number"
-                class="@InputClass"
-                @bind-value="@WeightAmt"
-                @bind-value:event="oninput" /> @WeightUom
+               class="@InputClass"
+               @bind-value="@WeightAmt"
+               @bind-value:event="oninput" /> @WeightUom
+        </div>
     </div>
-</div>
 
-@code {
+    @code {
 
-    protected override void OnAfterRender()
-    {
-        Model.Register(() =>
+        protected override void OnAfterRender(bool firstRender)
         {
-            _weight = Model.IsImperial ? (int)Model.WeightPounds :
-                (int)(Model.PoundsToKilograms(Model.WeightPounds));
-            base.StateHasChanged();
-        });
-        base.OnAfterRender();
-    }
-
-    protected override void OnInit()
-    {
-        base.OnInit();
-        _weight = (int)(Math.Round(Model.WeightPounds));
-    }
-
-    bool ErrorState = false;
-
-    string InputClass
-    {
-        get
-        {
-            return ErrorState ? "error" : string.Empty;
-        }
-    }
-
-    int MinWeight
-    {
-        get
-        {
-            return Model.IsImperial ? Globals.MinWeightPounds :
-                Globals.MinWeightKilograms;
-        }
-    }
-
-    int MaxWeight
-    {
-        get
-        {
-            return Model.IsImperial ? Globals.MaxWeightPounds :
-                Globals.MaxWeightKilograms;
-        }
-    }
-
-    int _weight;
-
-    int WeightAmt
-    {
-        get
-        {
-            return _weight;
-        }
-
-        set
-        {
-            if (value != _weight)
+            Model.Register(() =>
             {
-                _weight = value;
-                if (Model.IsImperial)
+                _weight = Model.IsImperial ? (int)Model.WeightPounds :
+        (int)(Model.PoundsToKilograms(Model.WeightPounds));
+                base.StateHasChanged();
+            });
+            base.OnAfterRender(firstRender);
+        }
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            _weight = (int)(Math.Round(Model.WeightPounds));
+        }
+
+        bool ErrorState = false;
+
+        string InputClass
+        {
+            get
+            {
+                return ErrorState ? "error" : string.Empty;
+            }
+        }
+
+        int MinWeight
+        {
+            get
+            {
+                return Model.IsImperial ? Globals.MinWeightPounds :
+                Globals.MinWeightKilograms;
+            }
+        }
+
+        int MaxWeight
+        {
+            get
+            {
+                return Model.IsImperial ? Globals.MaxWeightPounds :
+                Globals.MaxWeightKilograms;
+            }
+        }
+
+        int _weight;
+
+        int WeightAmt
+        {
+            get
+            {
+                return _weight;
+            }
+
+            set
+            {
+                if (value != _weight)
                 {
-                    if (value < Globals.MinWeightPounds || value > Globals.MaxWeightPounds)
+                    _weight = value;
+                    if (Model.IsImperial)
                     {
-                        ErrorState = true;
+                        if (value < Globals.MinWeightPounds || value > Globals.MaxWeightPounds)
+                        {
+                            ErrorState = true;
+                        }
+                        else
+                        {
+                            ErrorState = false;
+                            Model.WeightPounds = value;
+                        }
                     }
                     else
                     {
-                        ErrorState = false;
-                        Model.WeightPounds = value;
-                    }
-                }
-                else
-                {
-                    if (value < Globals.MinWeightKilograms || value > Globals.MaxWeightKilograms)
-                    {
-                        ErrorState = true;
-                    }
-                    else
-                    {
-                        ErrorState = false;
-                        Model.WeightPounds = Model.KilogramsToPounds(value);
+                        if (value < Globals.MinWeightKilograms || value > Globals.MaxWeightKilograms)
+                        {
+                            ErrorState = true;
+                        }
+                        else
+                        {
+                            ErrorState = false;
+                            Model.WeightPounds = Model.KilogramsToPounds(value);
+                        }
                     }
                 }
             }
         }
-    }
 
-    string WeightUom
-    {
-        get
+        string WeightUom
         {
-            return Model.IsImperial ? "lbs" : "kgs";
+            get
+            {
+                return Model.IsImperial ? "lbs" : "kgs";
+            }
         }
     }
-}
