@@ -2,6 +2,8 @@
 
 [Angular 2 Health App](https://github.com/JeremyLikness/Angular2HealthApp) ported to [Blazor](https://jlik.me/gkz) `3.0.0-preview9.19424.4` to learn how Blazor works.
 
+[![Free Azure Account](https://img.shields.io/badge/FREE-Azure-0077ff)](https://jlik.me/gmk) Get your [Free Azure Account](https://jlik.me/gmk)
+
 ![Screenshot](./splash.png)
 
 👀 See the running app [here](https://blazorhealthapp.z5.web.core.windows.net/)
